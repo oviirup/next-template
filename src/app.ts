@@ -14,3 +14,15 @@ export const SITE_DOMAIN = isDev
 export const SITE_URL = isDev
   ? `http://${SITE_DOMAIN}/`
   : `https://${SITE_DOMAIN}/`;
+
+export const SITE = {
+  NAME: SITE_NAME,
+  DESC: SITE_DESC,
+  DOMAIN: SITE_DOMAIN,
+  URL: SITE_URL,
+};
+
+export const THEME_COLOR = {
+  LIGHT: "#fafaf9", // stone-50
+  DARK: "#09090b", // zinc-950
+};

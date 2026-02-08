@@ -1,24 +1,18 @@
-import { envalid } from "@oviirup/envalid";
-import { vercel } from "@oviirup/envalid/presets";
+import { createEnv } from "@oviirup/env/next";
+import { vercel } from "@oviirup/env/presets";
 import { z } from "zod";
 
-export const env = envalid({
+export const env = createEnv({
   extends: [vercel()],
   shared: {
     NODE_ENV: z.enum(["development", "production", "test"]),
     PORT: z.string(),
   },
-  // variables only exposed to client
-  client: {},
-  // variables only exposed to server
-  server: {},
-  // must specify all variables individually
-  runtimeEnv: {
+  vars: {
     NODE_ENV: process.env.NODE_ENV,
-    PORT: process.env.PORT ?? "3000", // Next.JS build script dynamically adds the PORT env, so it needs a fallback value
+    PORT: process.env.PORT ?? "3000",
   },
-  // Only run validation if process is started from Next.js
-  skipValidation: !process.env.NEXT_RUNTIME,
+  skip: !process.env.NEXT_RUNTIME,
 });
 
 export const isProd = env.NODE_ENV === "production";
