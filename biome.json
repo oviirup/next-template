@@ -1,8 +1,14 @@
 {
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "defaultBranch": "main",
+    "useIgnoreFile": true
+  },
   "files": {
     "ignoreUnknown": true,
-    "includes": ["**", "!node_modules", "!.next", "!**/*.min.*"]
+    "includes": ["**", "!*.min.*"]
   },
   "formatter": {
     "enabled": true,
@@ -22,7 +28,7 @@
       },
       "suspicious": {
         "noConsole": {
-          "fix": "safe",
+          "fix": "none",
           "level": "warn",
           "options": { "allow": ["warn", "error", "info", "assert"] }
         },

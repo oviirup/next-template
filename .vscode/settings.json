@@ -9,7 +9,6 @@
     "source.organizeImports.biome": "explicit",
     "source.fixAll.biome": "explicit"
   },
-  "explorer.sortOrder": "type",
   "css.validate": false,
   "tailwindCSS.classFunctions": ["cva", "tv", "cn", "clsx"]
 }

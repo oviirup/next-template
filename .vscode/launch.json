@@ -1,0 +1,16 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "debug next.js",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "bun run dev -- --inspect",
+      "serverReadyAction": {
+        "action": "openExternally",
+        "pattern": "- Local:.+(https?://.+)",
+        "uriFormat": "%s"
+      }
+    }
+  ]
+}
