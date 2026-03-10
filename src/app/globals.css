@@ -3,10 +3,8 @@
 
 @custom-variant dark (&:where([data-theme="dark"] *));
 @custom-variant icon (& svg);
-@custom-variant focus (&:focus-visible);
 
 @theme inline {
-  --spacing: 4px;
   /* fonts */
   --font-sans: var(--next-font-sans);
   --font-mono: var(--next-font-mono);
@@ -18,7 +16,6 @@
   --radius-xl: calc(var(--radius) + 4px);
   --radius-2xl: calc(var(--radius) + 6px);
   --radius-3xl: calc(var(--radius) + 8px);
-
   /* colors */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -47,28 +44,28 @@
 
 :root {
   --radius: 10px;
-  --background: oklch(98.5% 0.001 106.423); /* stone-50 */
-  --foreground: oklch(14.7% 0.004 49.25); /* stone-950 */
-  --card: oklch(97% 0.001 106.424); /* stone-100 */
-  --card-fg: oklch(21.6% 0.006 56.043); /* stone-900 */
-  --popover: oklch(97% 0.001 106.424); /* stone-100 */
-  --popover-fg: oklch(21.6% 0.006 56.043); /* stone-900 */
-  --primary: oklch(26.8% 0.007 34.298); /* stone-800 */
-  --primary-fg: oklch(98.5% 0.001 106.423); /* stone-50 */
-  --secondary: oklch(92.3% 0.003 48.717); /* stone-200 */
-  --secondary-fg: oklch(26.8% 0.007 34.298); /* stone-800 */
-  --muted: oklch(92.3% 0.003 48.717); /* stone-200 */
-  --muted-fg: oklch(55.3% 0.013 58.071); /* stone-500 */
-  --accent: oklch(92.3% 0.003 48.717); /* stone-200 */
-  --accent-fg: oklch(26.8% 0.007 34.298); /* stone-800 */
+  --background: oklch(98.5% 0 0); /* zinc-50 */
+  --foreground: oklch(14.1% 0.005 285.823); /* zinc-950 */
+  --card: oklch(96.7% 0.001 286.375); /* zinc-100 */
+  --card-fg: oklch(21% 0.006 285.885); /* zinc-900 */
+  --popover: oklch(96.7% 0.001 286.375); /* zinc-100 */
+  --popover-fg: oklch(21% 0.006 285.885); /* zinc-900 */
+  --primary: oklch(27.4% 0.006 286.033); /* zinc-800 */
+  --primary-fg: oklch(98.5% 0 0); /* zinc-50 */
+  --secondary: oklch(92% 0.004 286.32); /* zinc-200 */
+  --secondary-fg: oklch(27.4% 0.006 286.033); /* zinc-800 */
+  --muted: oklch(92% 0.004 286.32); /* zinc-200 */
+  --muted-fg: oklch(55.2% 0.016 285.938); /* zinc-500 */
+  --accent: oklch(92% 0.004 286.32); /* zinc-200 */
+  --accent-fg: oklch(27.4% 0.006 286.033); /* zinc-800 */
   --error: oklch(44.4% 0.177 26.899); /* red-800 */
   --error-fg: oklch(50.5% 0.213 27.518); /* red-700 */
   --info: oklch(54.6% 0.245 262.881); /* blue-600 */
-  --warning: oklch(76.9% 0.188 70.08); /* amber-500 */
+  --warning: oklch(66.6% 0.179 58.318); /* amber-600 */
   --success: oklch(62.7% 0.194 149.214); /* green-600 */
-  --border: oklch(92.3% 0.003 48.717); /* stone-200 */
-  --input: oklch(92.3% 0.003 48.717); /* stone-200 */
-  --ring: oklch(55.3% 0.013 58.071); /* stone-300 */
+  --border: oklch(92% 0.004 286.32); /* zinc-200 */
+  --input: oklch(92% 0.004 286.32); /* zinc-200 */
+  --ring: oklch(44.2% 0.017 285.786); /* zinc-600 */
 }
 [data-theme="dark"] {
   --background: oklch(14.1% 0.005 285.823); /* zinc-950 */
@@ -89,7 +86,7 @@
   --error-fg: oklch(71.2% 0.194 13.428); /* rose-400 */
   --info: oklch(62.3% 0.214 259.815); /* blue-500 */
   --warning: oklch(76.9% 0.188 70.08); /* amber-500 */
-  --success: oklch(72.3% 0.219 149.579); /* green-500 */
+  --success: oklch(62.7% 0.194 149.214); /* green-600 */
   --border: oklch(27.4% 0.006 286.033); /* zinc-800 */
   --input: oklch(27.4% 0.006 286.033); /* zinc-800 */
   --ring: oklch(87.1% 0.006 286.286); /* zinc-300 */
@@ -98,12 +95,13 @@
 @layer base {
   html {
     interpolate-size: allow-keywords;
-    background-color: var(---background);
-    color: var(---foreground);
+    background-color: var(--background);
+    color: var(--foreground);
     scroll-behavior: smooth;
     scrollbar-gutter: stable;
+    scrollbar-width: thin;
     overflow-x: hidden;
-    accent-color: var(---primary);
+    accent-color: var(--primary);
   }
   body {
     overflow-x: clip;
@@ -116,9 +114,9 @@
     outline-offset: 2px;
     border-style: solid;
     border-color: var(--border);
-    user-select: none;
   }
   * {
+    scroll-margin-top: 3rem;
     scrollbar-color: var(--muted-fg) transparent;
     outline-color: transparent;
     outline-width: 0;
@@ -126,6 +124,6 @@
 }
 
 @utility highlight {
-  outline: 2px solid --alpha(var(--color-ring) / 0.5);
+  outline: 2px solid --alpha(var(--ring) / 0.5);
   outline-offset: 1px;
 }

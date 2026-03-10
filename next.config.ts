@@ -1,11 +1,10 @@
 import { NextConfig } from "next";
 
 const config: NextConfig = {
-  devIndicators: false,
   reactCompiler: true,
+  devIndicators: false,
   cacheComponents: true,
   typescript: { ignoreBuildErrors: true },
-  transpilePackages: ["next-mdx-remote"],
 };
 
 export default config;

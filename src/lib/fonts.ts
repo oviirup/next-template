@@ -8,7 +8,8 @@ export const fontSans = Inter({
 
 export const fontCode = Fira_Code({
   variable: "--next-font-code",
-  subsets: ["greek", "greek-ext", "latin", "latin-ext"],
+  subsets: ["latin"],
+  preload: true,
 });
 
 export const fonts = {
