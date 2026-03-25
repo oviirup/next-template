@@ -32,6 +32,8 @@
           "level": "warn",
           "options": { "allow": ["warn", "error", "info", "assert"] }
         },
+        "noDuplicateCustomProperties": "off",
+        "noDuplicateProperties": "off",
         "noExplicitAny": "off",
         "noUnknownAtRules": "off",
         "noArrayIndexKey": "off"
@@ -50,9 +52,14 @@
     }
   },
   "css": {
-    "parser": { "tailwindDirectives": true }
+    "parser": {
+      "tailwindDirectives": true,
+      "cssModules": true
+    }
   },
   "assist": {
-    "actions": { "source": { "organizeImports": "on" } }
+    "actions": {
+      "source": { "organizeImports": "on" }
+    }
   }
 }
