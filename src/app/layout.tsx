@@ -6,22 +6,22 @@ import { canonical, cn } from "@/lib/utils";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(SITE.URL),
-  title: { default: SITE.NAME, template: `%s | ${SITE.NAME}` },
-  description: SITE.DESC,
+  metadataBase: new URL(SITE.url),
+  title: { default: SITE.name, template: `%s | ${SITE.name}` },
+  description: SITE.desc,
   alternates: {
     canonical: canonical("/"),
   },
   openGraph: {
     type: "website",
-    title: { default: SITE.NAME, template: `%s | ${SITE.NAME}` },
-    description: SITE.DESC,
+    title: { default: SITE.name, template: `%s | ${SITE.name}` },
+    description: SITE.desc,
     locale: "en",
   },
   twitter: {
     card: "summary_large_image",
-    title: { default: SITE.NAME, template: `%s | ${SITE.NAME}` },
-    description: SITE.DESC,
+    title: { default: SITE.name, template: `%s | ${SITE.name}` },
+    description: SITE.desc,
   },
   robots: { index: true, follow: true },
   icons: [{ url: "/favicon.ico", type: "image/x-icon", sizes: "48x48" }],
@@ -32,8 +32,8 @@ export const viewport: Viewport = {
   viewportFit: "cover",
   colorScheme: "light dark",
   themeColor: [
-    { color: THEME_COLOR.DARK, media: "(prefers-color-scheme: dark)" },
-    { color: THEME_COLOR.LIGHT, media: "(prefers-color-scheme: light)" },
+    { color: THEME_COLOR.dark, media: "(prefers-color-scheme: dark)" },
+    { color: THEME_COLOR.light, media: "(prefers-color-scheme: light)" },
   ],
 };
 

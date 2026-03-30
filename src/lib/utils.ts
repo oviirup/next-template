@@ -47,6 +47,19 @@ export function composeRefs<T>(
   };
 }
 
+/** Combines multiple event handlers in one */
+export function composeEventHandlers(
+  original: React.EventHandler<any> | undefined,
+  custom: React.EventHandler<any> | undefined,
+  checkIsAllowed = true,
+) {
+  return (event: any) => {
+    original?.(event);
+    const isAllowed = !checkIsAllowed || !event?.defaultPrevented;
+    if (isAllowed) custom?.(event);
+  };
+}
+
 /** Applies a React SetStateAction to a previous state value */
 export function resolveStateAction<T>(
   action: React.SetStateAction<T>,

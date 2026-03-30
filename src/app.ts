@@ -16,13 +16,13 @@ export const SITE_URL = isDev
   : `https://${SITE_DOMAIN}/`;
 
 export const SITE = {
-  NAME: SITE_NAME,
-  DESC: SITE_DESC,
-  DOMAIN: SITE_DOMAIN,
-  URL: SITE_URL,
+  name: SITE_NAME,
+  desc: SITE_DESC,
+  domain: SITE_DOMAIN,
+  url: SITE_URL,
 };
 
 export const THEME_COLOR = {
-  LIGHT: "#fafaf9", // stone-50
-  DARK: "#09090b", // zinc-950
+  light: "#fafaf9", // stone-50
+  dark: "#09090b", // zinc-950
 };
