@@ -6,12 +6,7 @@ import { composeEventHandlers } from "@/lib/utils";
 
 const isExternal = (href: string) => /^https?:\/\//.test(href);
 
-export function Link({
-  external,
-  href,
-  onNavigate: onNavigateProp,
-  ...props
-}: Link.Props) {
+export function Link({ external, href, onNavigate: onNavigateProp, ...props }: Link.Props) {
   const _href = href.toString();
   const _hash = _href.split("#")[1];
   const _external = isExternal(_href) || external;

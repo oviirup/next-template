@@ -17,8 +17,4 @@ export const fonts = {
   code: fontCode,
 };
 
-export const fontClassNames = [
-  fontSans.className,
-  fontSans.variable,
-  fontCode.variable,
-];
+export const fontClassNames = [fontSans.className, fontSans.variable, fontCode.variable];

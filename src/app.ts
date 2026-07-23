@@ -5,15 +5,9 @@ export const SITE_DESC = "Simple Next.js template to get started quickly";
 
 export const DOMAIN = "acme.com";
 
-export const SITE_DOMAIN = isDev
-  ? `localhost:${env.PORT}`
-  : isPreview
-    ? env.VERCEL_URL
-    : DOMAIN;
+export const SITE_DOMAIN = isDev ? `localhost:${env.PORT}` : isPreview ? env.VERCEL_URL : DOMAIN;
 
-export const SITE_URL = isDev
-  ? `http://${SITE_DOMAIN}/`
-  : `https://${SITE_DOMAIN}/`;
+export const SITE_URL = isDev ? `http://${SITE_DOMAIN}/` : `https://${SITE_DOMAIN}/`;
 
 export const SITE = {
   name: SITE_NAME,

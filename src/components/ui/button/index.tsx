@@ -50,10 +50,7 @@ export function Button({
 }: Button.Props) {
   return (
     <BaseButton
-      className={cn(
-        buttonVariants({ variant, size, icon, rounded }),
-        className,
-      )}
+      className={cn(buttonVariants({ variant, size, icon, rounded }), className)}
       type={type}
       nativeButton={!nonNative}
       data-variant={variant}
@@ -78,13 +75,7 @@ export function ButtonLink({
   ...props
 }: ButtonLink.Props) {
   return (
-    <Link
-      className={cn(
-        buttonVariants({ variant, size, icon, rounded }),
-        className,
-      )}
-      {...props}
-    />
+    <Link className={cn(buttonVariants({ variant, size, icon, rounded }), className)} {...props} />
   );
 }
 export namespace ButtonLink {

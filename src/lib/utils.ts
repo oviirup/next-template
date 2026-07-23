@@ -28,9 +28,7 @@ export function canonical(input: string, trailingSlash = false) {
 }
 
 /** Combines multiple React refs into a single ref callback function */
-export function composeRefs<T>(
-  ...refs: Array<React.Ref<T> | undefined>
-): React.RefCallback<T> {
+export function composeRefs<T>(...refs: Array<React.Ref<T> | undefined>): React.RefCallback<T> {
   return (el) => {
     const cleanups = refs
       .map((ref) => {
@@ -61,9 +59,6 @@ export function composeEventHandlers(
 }
 
 /** Applies a React SetStateAction to a previous state value */
-export function resolveStateAction<T>(
-  action: React.SetStateAction<T>,
-  prev: T,
-) {
+export function resolveStateAction<T>(action: React.SetStateAction<T>, prev: T) {
   return isFunction(action) ? action(prev) : action;
 }

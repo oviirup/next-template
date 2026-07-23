@@ -11,10 +11,8 @@ import { createContext, createElement, use } from "react";
 export function createBaseContext<T>(name: string, initial: T) {
   const Context = createContext(initial);
   // Provider component
-  const Provider: React.FC<React.PropsWithChildren<{ value: T }>> = ({
-    children,
-    value,
-  }) => createElement(Context.Provider, { value }, children);
+  const Provider: React.FC<React.PropsWithChildren<{ value: T }>> = ({ children, value }) =>
+    createElement(Context.Provider, { value }, children);
   Provider.displayName = `${name}Provider`;
   // useContext hook
   const useContext = () => {
