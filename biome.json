@@ -3,22 +3,23 @@
   "vcs": {
     "enabled": true,
     "clientKind": "git",
-    "defaultBranch": "main",
     "useIgnoreFile": true
   },
   "files": {
     "ignoreUnknown": true,
-    "includes": ["**/*", "!*.min.*"]
+    "includes": ["**/*", "!*.min.*", "!public/**/*", "!**/*.lock"]
   },
   "formatter": {
     "enabled": true,
     "useEditorconfig": true,
-    "bracketSameLine": true
+    "bracketSameLine": true,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineWidth": 100
   },
   "linter": {
     "enabled": true,
     "rules": {
-      "recommended": true,
       "a11y": {
         "recommended": false
       },
@@ -27,16 +28,12 @@
         "useImportType": "off"
       },
       "suspicious": {
-        "noConsole": {
-          "fix": "none",
-          "level": "warn",
-          "options": { "allow": ["warn", "error", "info", "assert"] }
-        },
+        "noArrayIndexKey": "off",
+        "noConfusingVoidType": "off",
+        "noExplicitAny": "off",
         "noDuplicateCustomProperties": "off",
         "noDuplicateProperties": "off",
-        "noExplicitAny": "off",
-        "noUnknownAtRules": "off",
-        "noArrayIndexKey": "off"
+        "noUnknownAtRules": "off"
       },
       "nursery": {
         "useSortedClasses": {
@@ -55,11 +52,18 @@
     "parser": {
       "tailwindDirectives": true,
       "cssModules": true
+    },
+    "formatter": {
+      "enabled": true,
+      "lineWidth": 160
     }
   },
   "assist": {
     "actions": {
-      "source": { "organizeImports": "on" }
+      "source": {
+        "organizeImports": "on",
+        "noDuplicateClasses": "on"
+      }
     }
   }
 }

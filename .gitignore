@@ -4,9 +4,9 @@
 .vercel
 .turbo
 .next
-.velite
 node_modules
-
+dist
+build
 
 # debug
 *-debug.log*
